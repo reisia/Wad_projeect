@@ -1,0 +1,57 @@
+﻿@model IEnumerable<User>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary">Category List</h2>
+        </div>
+        <div class="col-6" text-end>
+            <a asp-controller="User" asp-action="Create" class="btn btn-primary">
+                Create new User
+            </a>
+        </div>
+    </div>
+
+</div>
+
+<table class="table table-bordered table-striped" style="width:100%">
+    <thead>
+        <tr>
+            <th>
+                First Name
+            </th>
+            <th>
+                Second Name
+            </th>
+            <th>
+                User Name
+            </th>
+            <th>
+                Email
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var obj in Model)
+        {
+            <tr>
+                <td width="25%">
+                    @obj.First_Name
+                </td>
+                <td width="25%">
+                    @obj.Second_Name
+                </td>
+                <td width="25%">
+                    @obj.UserName
+                </td>
+                <td width="25%">
+                    @obj.Email
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
